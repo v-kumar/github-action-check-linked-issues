@@ -110,7 +110,7 @@ async function getIssues({ owner, repo, issueIds, octokit }) {
         issues.push(issue_number);
       }
     } catch (error) {
-      core.debug('Error while retrieveing the error');
+      core.debug("Error while retrieveing the error");
       core.debug(error);
       core.debug(`#${issue_number} is not a valid issue.`);
     }
