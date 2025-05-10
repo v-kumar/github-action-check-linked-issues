@@ -109,7 +109,9 @@ async function getIssues({ owner, repo, issueIds, octokit }) {
         core.debug(`Found issue in PR Body ${issue_number}`);
         issues.push(issue_number);
       }
-    } catch {
+    } catch (error) {
+      core.debug('Error while retrieveing the error');
+      core.debug(error);
       core.debug(`#${issue_number} is not a valid issue.`);
     }
   }
